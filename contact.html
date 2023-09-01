@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="constyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body bgcolor="#EFEFEF">
+	<section>
+		<input type="checkbox" id="check">
+		<header>
+			<h2 class="logo">logo</h2>
+			<div class="nevigation">
+		<a href="homework.html">Home</a>
+      <a href="aboutcss.html">About</a>
+      <a href="contact.html">contact</a>
+      <a href="servicecss.html">service</a>
+			</div>
+			<label for="check">
+				<i class="fas fa-bars menu-btn"></i>
+				<i class="fas fa-times close-btn"></i>
+			</label>
+		</header>
+   
+    
+	
+	<div class="container">  
+        <form id="contact" action="" method="post">
+          <h3>Colorlib Contact Form</h3>
+          <h4>Contact us for custom quote</h4>
+          <fieldset>
+            <input placeholder="Your name" id="name" type="text" tabindex="1">
+          </fieldset>
+          <fieldset>
+            <input placeholder="Your Email Address" id="email" type="email" tabindex="2">
+          </fieldset>
+          <fieldset>
+            <input placeholder="Your Phone Number" id="number" type="tel" tabindex="3">
+          </fieldset>
+          <fieldset>
+            <textarea placeholder="Type your message here...." id="massage" tabindex="5"></textarea>
+          </fieldset>
+          <fieldset>
+            <button name="submit" onclick="formvalidation();" type="button" id="contact-submit" data-submit="...Sending">Submit</button>
+          </fieldset>
+         
+        </form>
+      </div>
+</section>
+<footer>
+  <a href="https://bdidi.in">bdidi.in</a>
+</footer>
+<script>
+    function formvalidation(){
+         var name=document.getElementById("name").value;
+         var email=document.getElementById("email").value;
+         var number=document.getElementById("number").value;
+         var massage=document.getElementById("massage").value;
+
+         {
+
+          if(name==""){
+             alert("Name is required");
+           }else if(email==""){
+             alert("email is required");
+           }else if(number==""){
+             alert("phone number is required");
+           }else if(massage==""){
+             alert("massage is required");
+           }
+         }
+         localStorage.setItem('name',name);
+         
+         localStorage.setItem('email','vijay');
+        
+         localStorage.setItem('number','vijay');
+        
+         localStorage.setItem('massage','vijay');
+         var hfhgh=   localStorage.getItem('name');
+         console.log(hfhgh);
+        }
+
+  </script>
+</body>
+</html>

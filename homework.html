@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="homestyle.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+</head>
+<body  bgcolor="#EFEFEF">
+	
+	<div class="head">
+		<input type="checkbox" id="check">
+		<header>
+			<h2 class="logo">logo</h2>
+			<div class="nevigation">
+			<a href="homework.html">Home</a>
+			<a href="aboutcss.html">About</a>
+			<a href="contact.html">contact</a>
+			<a href="servicecss.html">service</a>
+			</div>
+			<label for="check">
+				<i class="fas fa-bars menu-btn"></i>
+				<i class="fas fa-times close-btn"></i>
+			</label>
+		</header>
+	</div>
+	  <section class="section">
+	  	<div class="slider">
+	  		<div class="slide">
+	  			<input type="radio" name="radio-btn" id="radio1">
+	  			<input type="radio" name="radio-btn" id="radio2">
+	  			<input type="radio" name="radio-btn" id="radio3">
+	  			<input type="radio" name="radio-btn" id="radio4">
+	  		<div class="st">
+	  			<img src="image/forest1.jpg">
+	  			<img src="image/forest3.jpg">
+	  			<img src="image/rain1.jpg">
+	  			<img src="image/dress.jpg">
+	  		</div>
+
+	  			<div class="nav-auto">
+	  				<div class="a-b1"></div>
+	  				<div class="a-b2"></div>
+	  				<div class="a-b3"></div>
+	  				<div class="a-b4"></div>
+	  			</div>
+	  			<div class="nav-m">
+	  				<label for="radio1" class="m-btn"></label>
+	  				<label for="radio2" class="m-btn"></label>
+	  				<label for="radio3" class="m-btn"></label>
+	  				<label for="radio4" class="m-btn"></label>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </section>
+	  <script type="text/javascript">
+	  	var counter=1;
+	  	setInterval(function(){
+	  		document.getElementById('radio' + counter).checked=true;
+	  		counter++;
+	  		if (counter > 4){
+	  			counter=1;
+	  		}
+	  	},2000);
+	  </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  .review_wrap {
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  outline: none;
+  border: 1px solid #ccc;
+  text-align: left;
+  width: 25%;
+  min-height: 235px;
+  a{
+    color:#333;
+    text-decoration: none;
+  }
+  .review_head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media only screen and (max-width:991px) {
+      flex-wrap: wrap;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      outline: none;
+      @media only screen and (max-width:991px) {
+        width: 100%;
+      }
+
+      &:focus {
+        color: #444444;
+      }
+    }
+
+    img {
+      height: 35px;
+      width: 33px;
+    }
+
+    .rating_star {
+      display: flex;
+      justify-content: center;
+      @media only screen and (max-width:991px) {
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      img {
+        width: 35px;
+        height: 32px;
+        display: inline-block;
+      }
+    }
+  }
+
+  .review_comment {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+      height: 90px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      &.active {
+        height: auto;
+        overflow: auto;
+      }
+    }
+
+    a {
+      width: 100%;
+      color:#4292f9;
+      font-weight: bold;
+    }
+  }
+
+  h3 {
+    display: inline-block;
+
+    padding-top: 5px;
+    margin: 0;
+
+    span {
+      font-size: 16px;
+    }
+  }
+}
+.feedback_title {
+  display: inline-block !important;
+  font-size: 22px;
+  margin-bottom: 20px;
+  margin-top: 0;
+  border-bottom: none !important;
+  @media only screen and (min-width:991px) {
+    font-size: 30px;
+  }
+}
+</style>
+</head>
+<body>
+  <div class="review_wrap">
+        <div class="review_head">
+          <a href="#" target="_blank">
+        <h3>Name</br><span> </span></h3>
+</a>
+        </div>
+        <div class="review_comment">
+          <p>
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+              <a href="#" class="read_more"></a>
+        </div>
+      </div>
+      <script>
+function read_more() {
+var readmore = $('.read_more');
+var comment = $('.review_comment p').text();
+
+//goes through each index of the array of 'review_comment p'
+$('.review_comment p').each(function(i){
+  //calculates height of comment variable
+  var commentheight = $(this).height();
+  //calculates scroll height of comment on each div
+  var scrollcommentheight =  $('.review_comment p')[i].scrollHeight;
+  console.log("This is the comment height" + ' - ' + commentheight);
+  console.log("This is the scroll height" + ' - ' + scrollcommentheight);
+//if comment height is same as scroll height then hide read more button
+  if (commentheight == scrollcommentheight){
+    $(this).siblings(readmore).hide();
+  }
+//otherwise read more button shows
+  else {
+    $(this).siblings(readmore).text("Read More");
+  }
+});
+
+
+  readmore.on('click', function() {
+    var $this = $(this);
+    event.preventDefault();
+    
+    $this.siblings('.review_comment p').toggleClass('active');
+
+    if ($this.siblings('.review_comment p').text().length < 230) {
+      $this.text("Read More");
+    }
+    if ($('.review_comment p').hasClass('active')) {
+      $this.text("Read Less");
+    } else {
+      $this.text("Read More");
+    }
+  });
+};
+
+$(function() {
+  //Calling function after Page Load
+  read_more();
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+</html>

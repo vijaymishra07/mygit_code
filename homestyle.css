@@ -1,0 +1,224 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+
+header{
+	position: relative;
+	top: 0;
+	width: 100%;
+	padding: 30px 30px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: #333;
+	height: 20px;
+}
+header .logo{
+	color: white;
+	font-size: 30px;
+	font-weight: 800;
+	letter-spacing: 1px;
+}
+header .nevigation a{
+	color: #fff;	
+	text-decoration: none;
+	font-weight: 500;
+	letter-spacing: 1px;
+	padding: 2px 15px;
+	border-radius: 2px;
+	font-size: 20px;
+}
+header .nevigation a:not(:last-child){
+	margin-right: 30px;
+}
+header .nevigation a:hover{
+	background: #fff;
+	color: #333;
+}
+.content{
+	padding-top: 10px;
+	padding: 8px 8px;
+	text-transform: uppercase;
+}
+label .close-btn{
+	display: none;
+}
+label .menu-btn{
+	display: none;
+	text-align: right;
+}
+label :hover{
+	color: #fff;
+}
+#check{
+	z-index: 3;
+	display: none;
+}
+.text{
+	text-align: center;
+	padding-top: 300px;
+	        
+}
+/*Responsive style*/
+
+@media (max-width: 735px){
+	header .nevigation{
+		display: none;
+		transition: 0.4s;
+	}
+	header .nevigation a{
+		color: #333;
+	}
+	header .nevigation a:hover{
+		background-color: #333;
+		color: #fff;
+	}
+	label{
+		display: block;
+		font-size: 25px;
+		cursor: pointer;
+		transition-property: color;
+		text-transform: uppercase;               
+		
+	}
+	label .close-btn{
+		display: none;
+		color: #fff;
+	}
+	label .menu-btn{
+		display: block;
+		color: #fff;
+	}
+	#check:checked ~ header .nevigation{
+		z-index: 2;
+		position: fixed;
+		background: white;
+		top: 0px;
+		bottom: 0;
+		left: 0%;
+		right: 40%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-self: center;
+		transition: width 4s;
+
+	}
+	#check:checked ~ header .nevigation a{
+		font-weight: 700;
+		margin-right: 0;
+		margin-bottom: 50px;
+		letter-spacing: 2px;
+		transition: 0.4s;
+		
+	}
+	#check:checked ~ header label .menu-btn{
+		display: none;
+	}
+	#check:checked ~ header label .close-btn{
+		z-index: 2;
+		display: block;
+	}
+	
+}
+.section{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+.slider{
+	width: 990px;
+	height: 500px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+.slide{
+	width: 500%;
+	height: 500px;
+	display: flex;
+}
+.slide input{
+	display: none;
+
+}
+.st{
+	width: 20%;
+	transition: 2s;
+}
+.st img{
+	width: 990px;
+	height: 500px;
+}
+.nav-m{
+	position: absolute;
+	width: 800px;
+	margin-top: -40px;
+	justify-content: center;
+	display: flex;
+}
+.m-btn{
+	border: 2px solid #333;
+	padding: 5px;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: 1s;
+}
+.m-btn:not(:last-child){
+	margin-right: 30px;
+}
+.m-btn:hover{
+	background-color: #333;
+}
+#radio1:checked ~ .first{
+	margin-left: 0;
+}
+#radio2:checked ~ .first{
+	margin-left: -20%;
+}
+#radio3:checked ~ .first{
+	margin-left: -40%;
+}
+#radio4:checked ~ .first{
+	margin-left: -60%;
+}
+.nav-auto{
+	position: absolute;
+	width: 800px;
+	margin-top: 460px;
+	display: flex;
+	justify-content: center;
+}
+.nav-auto div{
+	border: 2px solid white;
+	border-radius: 10px;
+	padding: 5px;
+	transition: 0.3s;
+}
+.nav-auto div:not(:last-child){
+	margin-right: 30px;
+	justify-content: center;
+}
+
+#radio1:checked ~ .nav-auto .a-b1{
+	background-color: white;
+}
+#radio2:checked ~ .nav-auto .a-b2{
+	background-color: white;
+}
+#radio3:checked ~ .nav-auto .a-b3{
+	background-color: white;
+}
+#radio4:checked ~ .nav-auto .a-b4{
+	background-color: white;
+}
+
+
+

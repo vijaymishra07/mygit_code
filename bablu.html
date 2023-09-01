@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>the beautiful nature</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body>
+    <header>
+    	<nav>
+    		<div class="logo">
+    			Natu<span>R</span>E
+    		</div>
+    		<div class="menu">
+    			<a href="#">Home</a>
+    			<a href="#">About</a>
+    			<a href="#">Gallery</a>
+    			<a href="#">Contect</a>
+    		</div>
+    		<div class="icon">
+    			<i class="fa fa-search"></i>
+    			<a href="#">Login</a>
+    		</div>
+    	</nav>
+    	<section class="h-text">
+    		<i class="fa fa-camera" id="camera"></i>
+    		<h1>Capturing the beautiful mother nature movement.</h1>
+    		<input type="text" name="" placeholder="Search here...">
+    		<button><i class="fa fa-search"></i></button>
+    	</section>
+    </header>
+    <section class="filter-gallery">
+    	<div class="portfolio-menu">
+    		<ul>
+    			<li class="active" data-filter="*">All</li>
+    			<li data-filter=".nature">Nature</li>
+    			<li data-filter=".forest">Forest</li>
+    			<li data-filter=".iland">ILand</li>
+    		</ul>
+    	</div>
+    	<div class="portfolio-item">
+    		<div class="item nature">
+    			<img src="image/rain1.jpg" width="100" height="100">
+    		</div>
+    		  	<div class="item nature">
+    			<img src="image/rain2.jpg" width="100" height="100">
+    		</div>
+    		    		<div class="item nature">
+    			<img src="image/rain3.jpeg" width="100" height="100">
+    		</div>
+    		    		<div class="item forest">
+    			<img src="image/forest1.jpg" width="100" height="100">
+    		</div>
+    		    		<div class="item forest">
+    			<img src="image/imag2.jpg" width="100" height="100">
+    		</div>
+    		    		<div class="item forest">
+    			<img src="image/forest3.jpg" width="100" height="100">
+    		</div>
+    		    		<div class="item iland">
+    			<img src="image/iland1.jpg" width="100" height="100">
+    		</div>    		<div class="item iland">
+    			<img src="image/iland2.jpg" width="100" height="100">
+    		</div>    		<div class="item iland">
+    			<img src="image/iland3.jpg" width="100" height="100">
+    		</div>  	
+    	</div>
+
+    </section>
+    <section class="member">
+    	<div class="member-info">
+    		<h1>Our<span> Information</span></h1>
+        <p>I am a software developer</p>
+    	</div>
+    	<div class="member-card">
+    		<img src="image/vijay.jpg" width="150" class="rounded-circle" alt="Cinque Terre">
+    		<p>
+    			Hello friends my name is vijay mishra and i want to<br>  become a software developer i am student of<br>  central collage first year and i design website<br>  i am interested in html,css and bootstrap.
+    		</p>
+    		<h5>Vijay Mishra</h5>
+    		<img src="image/insta.png" width="100">
+    		<img src="image/face.png" width="100">
+    		<img src="image/you.png" width="80">
+    	</div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script type="text/javascript">
+    	$('.portfolio-item').isotope({
+  // options
+  itemSelector: '.item',
+  layoutMode: 'fitRows'
+});
+    	$('.portfolio-menu ul li').click(function(){
+    	$('.portfolio-menu ul li').removeClass('active');
+    	$(this).addClass('active');
+
+    		var selector =$(this).attr('data-filter');
+    	$('.portfolio-item').isotope({
+    		filter:selector	
+   		});
+    	return false;
+    	});
+    </script>
+</body>
+</html>
